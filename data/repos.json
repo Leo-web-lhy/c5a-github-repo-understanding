@@ -1,0 +1,1595 @@
+[
+  {
+    "repo": "psf/requests",
+    "fetched_at": "2026-11-17T04:25:36Z",
+    "meta": {
+      "full_name": "psf/requests",
+      "description": "A simple, yet elegant, HTTP library.",
+      "html_url": "https://github.com/psf/requests",
+      "default_branch": "main",
+      "size_kb": 13640,
+      "stars": 54715,
+      "forks": 10872,
+      "watchers": 1331,
+      "open_issues": 256,
+      "language": "Python",
+      "topics": [
+        "client",
+        "cookies",
+        "forhumans",
+        "http",
+        "humans",
+        "python",
+        "python-requests",
+        "requests"
+      ],
+      "license": "Apache-2.0",
+      "created_at": "2011-02-13T18:38:17Z",
+      "pushed_at": "2026-11-02T16:55:12Z",
+      "archived": false,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_projects": false,
+      "allow_squash_merge": null,
+      "allow_merge_commit": null,
+      "allow_rebase_merge": null,
+      "delete_branch_on_merge": null
+    },
+    "root_entries": [
+      {
+        "name": ".coveragerc",
+        "type": "file",
+        "size": 33
+      },
+      {
+        "name": ".git-blame-ignore-revs",
+        "type": "file",
+        "size": 234
+      },
+      {
+        "name": ".github",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "size": 321
+      },
+      {
+        "name": ".pre-commit-config.yaml",
+        "type": "file",
+        "size": 484
+      },
+      {
+        "name": ".readthedocs.yaml",
+        "type": "file",
+        "size": 738
+      },
+      {
+        "name": "AUTHORS.rst",
+        "type": "file",
+        "size": 8025
+      },
+      {
+        "name": "HISTORY.md",
+        "type": "file",
+        "size": 64563
+      },
+      {
+        "name": "LICENSE",
+        "type": "file",
+        "size": 10142
+      },
+      {
+        "name": "MANIFEST.in",
+        "type": "file",
+        "size": 126
+      },
+      {
+        "name": "Makefile",
+        "type": "file",
+        "size": 834
+      },
+      {
+        "name": "NOTICE",
+        "type": "file",
+        "size": 38
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "size": 2906
+      },
+      {
+        "name": "docs",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "ext",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "size": 3404
+      },
+      {
+        "name": "requirements-dev.txt",
+        "type": "file",
+        "size": 93
+      },
+      {
+        "name": "setup.py",
+        "type": "file",
+        "size": 179
+      },
+      {
+        "name": "src",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "tests",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "tox.ini",
+        "type": "file",
+        "size": 285
+      }
+    ],
+    "markers": {
+      "README.md": true,
+      "LICENSE": true,
+      "LICENSE.txt": false,
+      "CONTRIBUTING.md": false,
+      "CODE_OF_CONDUCT.md": false,
+      ".github": true,
+      ".gitignore": true,
+      ".editorconfig": false,
+      "pyproject.toml": true,
+      "setup.py": true,
+      "setup.cfg": false,
+      "requirements.txt": false,
+      "tox.ini": true,
+      "Makefile": true,
+      "CHANGELOG.md": false,
+      "docs": true,
+      "tests": true,
+      "test": false,
+      "src": true,
+      "AUTHORS.md": false,
+      "MANIFEST.in": true
+    },
+    "tree_truncated": false,
+    "blob_count": 130,
+    "dir_count": 23,
+    "top_extensions": [
+      [
+        ".py",
+        37
+      ],
+      [
+        ".rst",
+        16
+      ],
+      [
+        "(no-ext)",
+        15
+      ],
+      [
+        ".md",
+        13
+      ],
+      [
+        ".yml",
+        10
+      ],
+      [
+        ".png",
+        5
+      ],
+      [
+        ".key",
+        4
+      ],
+      [
+        ".cnf",
+        4
+      ]
+    ],
+    "files_per_toplevel": [
+      [
+        "tests",
+        42
+      ],
+      [
+        "docs",
+        26
+      ],
+      [
+        "src",
+        20
+      ],
+      [
+        ".github",
+        19
+      ],
+      [
+        "(root files)",
+        16
+      ],
+      [
+        "ext",
+        7
+      ]
+    ],
+    "deepest_path_depth": 5,
+    "workflow_files": [
+      ".github/workflows/close-issues.yml",
+      ".github/workflows/codeql-analysis.yml",
+      ".github/workflows/lint.yml",
+      ".github/workflows/lock-issues.yml",
+      ".github/workflows/publish.yml",
+      ".github/workflows/run-tests.yml",
+      ".github/workflows/typecheck.yml",
+      ".github/workflows/zizmor.yml"
+    ],
+    "recent_commits": [
+      {
+        "sha": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
+        "author": "dependabot[bot]",
+        "date": "2026-10-26T17:14:41Z",
+        "first_line": "Bump the actions group with 4 updates (#7636)",
+        "msg_len": 2618,
+        "merge_pr": false
+      },
+      {
+        "sha": "611c6162cbc4ac2020a2f91c7cfa4f3abf9bbb60",
+        "author": "dependabot[bot]",
+        "date": "2026-09-21T20:22:33Z",
+        "first_line": "Bump the actions group with 3 updates (#7628)",
+        "msg_len": 2088,
+        "merge_pr": false
+      },
+      {
+        "sha": "dae7ef63b4df6eded86637f251fc4e3a06c3b479",
+        "author": "dependabot[bot]",
+        "date": "2026-09-02T18:15:52Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7616)",
+        "msg_len": 760,
+        "merge_pr": false
+      },
+      {
+        "sha": "5460f467b02e49471c0fd6cfc9ca0adab6351f98",
+        "author": "nateprewitt",
+        "date": "2026-08-25T00:45:57Z",
+        "first_line": "Update lock-issues.yml to latest dependencies (#7609)",
+        "msg_len": 53,
+        "merge_pr": false
+      },
+      {
+        "sha": "6af0b94158bbe10c45e754e85f9701f401e6aa9c",
+        "author": "dependabot[bot]",
+        "date": "2026-08-24T17:33:15Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7608)",
+        "msg_len": 760,
+        "merge_pr": false
+      },
+      {
+        "sha": "8f8b212de8c2129d7954c6cd373762880375620a",
+        "author": "dependabot[bot]",
+        "date": "2026-08-17T19:03:13Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7606)",
+        "msg_len": 760,
+        "merge_pr": false
+      },
+      {
+        "sha": "8068356288978c4f54661ae6f95afe0e0831885e",
+        "author": "dependabot[bot]",
+        "date": "2026-08-11T16:14:26Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7603)",
+        "msg_len": 760,
+        "merge_pr": false
+      },
+      {
+        "sha": "1f6589ec3a1ee910f9a65cc3ceac60b26677bc0e",
+        "author": "dependabot[bot]",
+        "date": "2026-08-03T17:52:44Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7598)",
+        "msg_len": 762,
+        "merge_pr": false
+      },
+      {
+        "sha": "414f0513c33883adf6f2b46901d4f0b38a455851",
+        "author": "dependabot[bot]",
+        "date": "2026-07-27T17:25:09Z",
+        "first_line": "Bump the actions group with 2 updates (#7596)",
+        "msg_len": 1294,
+        "merge_pr": false
+      },
+      {
+        "sha": "ded32878c0090f6b7b32a008176df6cecf36481f",
+        "author": "dependabot[bot]",
+        "date": "2026-07-27T17:18:18Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7597)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "69f84847045bef7a849cc994a26fe7ba8a169e95",
+        "author": "dependabot[bot]",
+        "date": "2026-07-20T18:41:16Z",
+        "first_line": "Bump the actions group with 3 updates (#7591)",
+        "msg_len": 2088,
+        "merge_pr": false
+      },
+      {
+        "sha": "b17c61b618b1824f1f5d9edcacaf16801343a295",
+        "author": "dependabot[bot]",
+        "date": "2026-07-20T17:55:26Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7590)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "f361ead047be5cb873174218582f7d8b9fcd9f49",
+        "author": "dependabot[bot]",
+        "date": "2026-07-09T15:12:40Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7562)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "d38495c90653496c3c81f31e8f9bef162b400b44",
+        "author": "yamac-kurtulus",
+        "date": "2026-07-09T15:10:39Z",
+        "first_line": "Fix link to AI Policy in CONTRIBUTING.md (#7576)",
+        "msg_len": 48,
+        "merge_pr": false
+      },
+      {
+        "sha": "4c800e9aea2059660b8306b0fc8f9e9a4232cb3e",
+        "author": "dependabot[bot]",
+        "date": "2026-07-06T17:32:29Z",
+        "first_line": "Bump actions/setup-python from 6.2.0 to 6.3.0 in the actions group (#7561)",
+        "msg_len": 789,
+        "merge_pr": false
+      },
+      {
+        "sha": "23953c0c875219a715f081cf3de7c149a7629ccf",
+        "author": "dependabot[bot]",
+        "date": "2026-06-29T17:37:19Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7551)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "4ed3d1b3204caa6806a36125a39589044a02e807",
+        "author": "dependabot[bot]",
+        "date": "2026-06-24T22:47:15Z",
+        "first_line": "Bump actions/checkout from 6.0.2 to 7.0.0 in the actions group (#7540)",
+        "msg_len": 835,
+        "merge_pr": false
+      },
+      {
+        "sha": "d44b67eb55f3dea5a36024b8c4ae6a5c37bca617",
+        "author": "dependabot[bot]",
+        "date": "2026-06-24T22:40:29Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7536)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "74c56d5ffb0ad718dbd011b983d056c994355d7d",
+        "author": "nateprewitt",
+        "date": "2026-06-24T22:40:12Z",
+        "first_line": "Inline pre-commit linting (#7539)",
+        "msg_len": 33,
+        "merge_pr": false
+      },
+      {
+        "sha": "d64b9ad4bf1c14e21e0df3f0f4320fec81180e91",
+        "author": "dependabot[bot]",
+        "date": "2026-06-15T18:12:28Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7515)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "6f66281a1d6326b1b9c4ac09ca30de0fc4e6ef43",
+        "author": "nateprewitt",
+        "date": "2026-06-09T15:45:59Z",
+        "first_line": "Add hasattr checks for remaining protocol isinstance checks (#7505)",
+        "msg_len": 67,
+        "merge_pr": false
+      },
+      {
+        "sha": "6f205ff422bccd5e4c4fc0b64c5f3e7df5181db6",
+        "author": "LoicPernod",
+        "date": "2026-06-08T20:52:51Z",
+        "first_line": "Fix `_encode_files` detection for `__getattr__`-based file wrappers (#7502)",
+        "msg_len": 75,
+        "merge_pr": false
+      },
+      {
+        "sha": "661970d171d9c3e12e4c789c4768db647d8c4da0",
+        "author": "jorenham",
+        "date": "2026-06-08T17:33:26Z",
+        "first_line": "Disable commonly ignored Pyright linting rules (#7497)",
+        "msg_len": 54,
+        "merge_pr": false
+      },
+      {
+        "sha": "fbd0eb37320376740a1010f52f2b9870e8210d88",
+        "author": "dependabot[bot]",
+        "date": "2026-06-08T17:04:24Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7503)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "1190afd14fca74292946d62c4c8169880a47ff67",
+        "author": "jorenham",
+        "date": "2026-06-04T21:43:21Z",
+        "first_line": "Add type annotation for `Request.hooks` (#7498)",
+        "msg_len": 47,
+        "merge_pr": false
+      },
+      {
+        "sha": "e50e5945294f79ee9ab4ec69de24d14f9b26a7ae",
+        "author": "jorenham",
+        "date": "2026-06-04T17:20:33Z",
+        "first_line": "Improve static typing of 3rd party imports  (#7496)",
+        "msg_len": 175,
+        "merge_pr": false
+      },
+      {
+        "sha": "3be097d450ee4ca8a2f9c1a3a58eb61ed19936b0",
+        "author": "dependabot[bot]",
+        "date": "2026-06-03T00:45:34Z",
+        "first_line": "Bump https://github.com/astral-sh/ruff-pre-commit (#7493)",
+        "msg_len": 765,
+        "merge_pr": false
+      },
+      {
+        "sha": "a634611dd1bbf1455723cff0af2ecc30866d880c",
+        "author": "dependabot[bot]",
+        "date": "2026-06-03T00:44:54Z",
+        "first_line": "Bump github/codeql-action from 4.35.1 to 4.36.0 in the actions group (#7492)",
+        "msg_len": 872,
+        "merge_pr": false
+      },
+      {
+        "sha": "c4367f231b5dc54f23f2983828562ce3a7555a8a",
+        "author": "sigmavirus24",
+        "date": "2026-05-31T12:33:11Z",
+        "first_line": "Add AI Policy",
+        "msg_len": 353,
+        "merge_pr": false
+      },
+      {
+        "sha": "cd90742ed94d901759e26766197d0ce7c7bd9c8e",
+        "author": "aldbr",
+        "date": "2026-05-18T15:02:35Z",
+        "first_line": "docs: indent continuation line in Session.get :param params: (#7460)",
+        "msg_len": 68,
+        "merge_pr": false
+      }
+    ],
+    "commit_sample": 30,
+    "commit_stats": {
+      "avg_msg_len": 716.0,
+      "min_msg_len": 33,
+      "max_msg_len": 2618,
+      "distinct_authors": 7,
+      "merge_pr_ratio": 0.0,
+      "oldest_in_sample": "2026-05-18T15:02:35Z",
+      "newest_in_sample": "2026-10-26T17:14:41Z"
+    },
+    "branch_count_sampled": 8,
+    "tag_count_sampled": 100,
+    "releases_sampled": [
+      {
+        "tag": "v2.34.2",
+        "published_at": "2026-05-14T19:27:15Z"
+      },
+      {
+        "tag": "v2.34.1",
+        "published_at": "2026-05-13T19:23:51Z"
+      },
+      {
+        "tag": "v2.34.0",
+        "published_at": "2026-05-11T19:40:27Z"
+      },
+      {
+        "tag": "v2.33.1",
+        "published_at": "2026-03-30T16:12:09Z"
+      },
+      {
+        "tag": "v2.33.0",
+        "published_at": "2026-03-25T16:38:25Z"
+      }
+    ],
+    "prs_open": 88,
+    "prs_merged": 1687,
+    "prs_closed_unmerged": 1272,
+    "issues_open": 168,
+    "issues_closed": 4025,
+    "languages": [
+      {
+        "lang": "Python",
+        "pct": 99.4
+      },
+      {
+        "lang": "Makefile",
+        "pct": 0.6
+      }
+    ]
+  },
+  {
+    "repo": "pallets/flask",
+    "fetched_at": "2026-11-17T04:25:51Z",
+    "meta": {
+      "full_name": "pallets/flask",
+      "description": "The Python micro framework for building web applications.",
+      "html_url": "https://github.com/pallets/flask",
+      "default_branch": "main",
+      "size_kb": 12227,
+      "stars": 75184,
+      "forks": 17339,
+      "watchers": 2160,
+      "open_issues": 4,
+      "language": "Python",
+      "topics": [
+        "flask",
+        "jinja",
+        "pallets",
+        "python",
+        "web-framework",
+        "werkzeug",
+        "wsgi"
+      ],
+      "license": "BSD-3-Clause",
+      "created_at": "2010-04-06T11:11:59Z",
+      "pushed_at": "2026-10-30T15:05:22Z",
+      "archived": false,
+      "has_issues": true,
+      "has_wiki": false,
+      "has_projects": false,
+      "allow_squash_merge": null,
+      "allow_merge_commit": null,
+      "allow_rebase_merge": null,
+      "delete_branch_on_merge": null
+    },
+    "root_entries": [
+      {
+        "name": ".devcontainer",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": ".editorconfig",
+        "type": "file",
+        "size": 233
+      },
+      {
+        "name": ".github",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": ".gitignore",
+        "type": "file",
+        "size": 74
+      },
+      {
+        "name": ".pre-commit-config.yaml",
+        "type": "file",
+        "size": 844
+      },
+      {
+        "name": ".readthedocs.yaml",
+        "type": "file",
+        "size": 242
+      },
+      {
+        "name": "CHANGES.rst",
+        "type": "file",
+        "size": 73668
+      },
+      {
+        "name": "LICENSE.txt",
+        "type": "file",
+        "size": 1475
+      },
+      {
+        "name": "README.md",
+        "type": "file",
+        "size": 1639
+      },
+      {
+        "name": "docs",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "examples",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "pyproject.toml",
+        "type": "file",
+        "size": 6424
+      },
+      {
+        "name": "src",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "tests",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "uv.lock",
+        "type": "file",
+        "size": 279196
+      }
+    ],
+    "markers": {
+      "README.md": true,
+      "LICENSE": false,
+      "LICENSE.txt": true,
+      "CONTRIBUTING.md": false,
+      "CODE_OF_CONDUCT.md": false,
+      ".github": true,
+      ".gitignore": true,
+      ".editorconfig": true,
+      "pyproject.toml": true,
+      "setup.py": false,
+      "setup.cfg": false,
+      "requirements.txt": false,
+      "tox.ini": false,
+      "Makefile": false,
+      "CHANGELOG.md": false,
+      "docs": true,
+      "tests": true,
+      "test": false,
+      "src": true,
+      "AUTHORS.md": false,
+      "MANIFEST.in": false
+    },
+    "tree_truncated": false,
+    "blob_count": 236,
+    "dir_count": 51,
+    "top_extensions": [
+      [
+        ".py",
+        83
+      ],
+      [
+        ".rst",
+        79
+      ],
+      [
+        ".html",
+        20
+      ],
+      [
+        ".txt",
+        10
+      ],
+      [
+        ".yaml",
+        7
+      ],
+      [
+        ".md",
+        6
+      ],
+      [
+        ".png",
+        5
+      ],
+      [
+        ".toml",
+        5
+      ]
+    ],
+    "files_per_toplevel": [
+      [
+        "docs",
+        87
+      ],
+      [
+        "tests",
+        61
+      ],
+      [
+        "examples",
+        42
+      ],
+      [
+        "src",
+        26
+      ],
+      [
+        "(root files)",
+        9
+      ],
+      [
+        ".github",
+        9
+      ],
+      [
+        ".devcontainer",
+        2
+      ]
+    ],
+    "deepest_path_depth": 8,
+    "workflow_files": [
+      ".github/workflows/lock.yaml",
+      ".github/workflows/pre-commit.yaml",
+      ".github/workflows/publish.yaml",
+      ".github/workflows/tests.yaml",
+      ".github/workflows/zizmor.yaml"
+    ],
+    "recent_commits": [
+      {
+        "sha": "49943b5a94413a530761350f04e896f76e8d620e",
+        "author": "davidism",
+        "date": "2026-10-30T15:05:20Z",
+        "first_line": "add `versionchanged` for ctx signature change (#6176)",
+        "msg_len": 53,
+        "merge_pr": false
+      },
+      {
+        "sha": "bfc8f983871dcadf0492578d9ab72d951b34c19c",
+        "author": "davidism",
+        "date": "2026-10-30T15:03:23Z",
+        "first_line": "add `versionchanged` for ctx signature change",
+        "msg_len": 45,
+        "merge_pr": false
+      },
+      {
+        "sha": "d04a0c15a83c78186cf31dc5d226b3110321b9e5",
+        "author": "davidism",
+        "date": "2026-10-30T14:47:20Z",
+        "first_line": "fix example typo",
+        "msg_len": 16,
+        "merge_pr": false
+      },
+      {
+        "sha": "f2ef7a553e800989f5e7c4ed4487dfd011c6dd40",
+        "author": "davidism",
+        "date": "2026-10-30T14:45:34Z",
+        "first_line": "werkzeug 3.2 compat",
+        "msg_len": 19,
+        "merge_pr": false
+      },
+      {
+        "sha": "d086db856be187255b8ec61ef409357393020f32",
+        "author": "davidism",
+        "date": "2026-10-07T14:02:54Z",
+        "first_line": "fix typing",
+        "msg_len": 10,
+        "merge_pr": false
+      },
+      {
+        "sha": "329c32b916938d33fec41f40eb7ed854bf0b3e2b",
+        "author": "davidism",
+        "date": "2026-10-07T14:01:40Z",
+        "first_line": "fix dev",
+        "msg_len": 7,
+        "merge_pr": false
+      },
+      {
+        "sha": "41cb747cd5a9b43da43bf809ad974722542603db",
+        "author": "davidism",
+        "date": "2026-10-07T13:56:56Z",
+        "first_line": "fix link",
+        "msg_len": 8,
+        "merge_pr": false
+      },
+      {
+        "sha": "728c5e440af704a786384159184f695cf04ecbe7",
+        "author": "davidism",
+        "date": "2026-10-07T13:56:05Z",
+        "first_line": "drop support for Python 3.10 (#6168)",
+        "msg_len": 36,
+        "merge_pr": false
+      },
+      {
+        "sha": "7689f98403e2c0b0bc8d1031e60f8cff2620e86a",
+        "author": "davidism",
+        "date": "2026-10-07T13:47:14Z",
+        "first_line": "drop support for Python 3.10",
+        "msg_len": 28,
+        "merge_pr": false
+      },
+      {
+        "sha": "d73fa1cdcbd8b1465c151db8924ba58b1dd14e35",
+        "author": "davidism",
+        "date": "2026-09-08T16:40:33Z",
+        "first_line": "fix docs ref",
+        "msg_len": 12,
+        "merge_pr": false
+      },
+      {
+        "sha": "d318b683471101618febed18996405ad26462110",
+        "author": "davidism",
+        "date": "2026-08-16T18:35:31Z",
+        "first_line": "explain seek",
+        "msg_len": 12,
+        "merge_pr": false
+      },
+      {
+        "sha": "2a8a38b051fc248865730bf3511bf2e2ea325e81",
+        "author": "davidism",
+        "date": "2026-08-11T22:32:49Z",
+        "first_line": "support query in methodview",
+        "msg_len": 27,
+        "merge_pr": false
+      },
+      {
+        "sha": "d8eaaba824655046958d1a97f11780de460c3271",
+        "author": "davidism",
+        "date": "2026-08-11T20:19:14Z",
+        "first_line": "add `app.query` route decorator (#6133)",
+        "msg_len": 39,
+        "merge_pr": false
+      },
+      {
+        "sha": "89992954ec71b594b1b911f98977cdc8ad46a057",
+        "author": "davidism",
+        "date": "2026-08-11T20:15:18Z",
+        "first_line": "add app.query route decorator",
+        "msg_len": 29,
+        "merge_pr": false
+      },
+      {
+        "sha": "3596b1ab61cea85edb8970e83ff61daa073facf8",
+        "author": "davidism",
+        "date": "2026-08-11T19:56:09Z",
+        "first_line": "add entry",
+        "msg_len": 9,
+        "merge_pr": false
+      },
+      {
+        "sha": "05e9c6bd630ecf4ec0ec884b1fc7901663737bc7",
+        "author": "davidism",
+        "date": "2026-08-11T19:48:40Z",
+        "first_line": "Fix `.partition(\":\")` usage on potential IPv6 addresses (#6096)",
+        "msg_len": 63,
+        "merge_pr": false
+      },
+      {
+        "sha": "7203feabf723edae0286ae5dc64fec8ac4c91735",
+        "author": "lkk7",
+        "date": "2026-07-14T14:42:09Z",
+        "first_line": "Fix IPv6 server name parsing",
+        "msg_len": 28,
+        "merge_pr": false
+      },
+      {
+        "sha": "de8429ffda8cfb54db175529e2bae72a24e1fa7e",
+        "author": "lkk7",
+        "date": "2026-07-14T14:40:58Z",
+        "first_line": "Fix IPv6 session transactions",
+        "msg_len": 29,
+        "merge_pr": false
+      },
+      {
+        "sha": "514fc6b3e8402e4c646d5284e97a4f0ab50a7c4b",
+        "author": "davidism",
+        "date": "2026-08-11T19:43:58Z",
+        "first_line": "Merge branch 'stable'",
+        "msg_len": 21,
+        "merge_pr": false
+      },
+      {
+        "sha": "81798b406f97ffe4795d2c9fc18db7db744a96dc",
+        "author": "davidism",
+        "date": "2026-08-11T18:59:41Z",
+        "first_line": "fix typos",
+        "msg_len": 9,
+        "merge_pr": false
+      },
+      {
+        "sha": "8b4fd5d18611e63080b826ecfefe8659dba7d2e4",
+        "author": "davidism",
+        "date": "2026-08-10T23:45:01Z",
+        "first_line": "use header properties",
+        "msg_len": 21,
+        "merge_pr": false
+      },
+      {
+        "sha": "6a2f545bfd8ed31e19066a299296917e034aca58",
+        "author": "davidism",
+        "date": "2026-07-30T17:29:33Z",
+        "first_line": "Merge branch 'stable'",
+        "msg_len": 21,
+        "merge_pr": false
+      },
+      {
+        "sha": "30d1c5d6fcbd62d9e902209d7a207f7510e9f5dc",
+        "author": "davidism",
+        "date": "2026-07-30T17:27:54Z",
+        "first_line": "test Python 3.15",
+        "msg_len": 16,
+        "merge_pr": false
+      },
+      {
+        "sha": "ff6fa22f4d961a28567db11430208b964620f511",
+        "author": "davidism",
+        "date": "2026-07-30T17:25:54Z",
+        "first_line": "update dependencies",
+        "msg_len": 19,
+        "merge_pr": false
+      },
+      {
+        "sha": "548994ea0c61465574cbfdd636a894a692f54b94",
+        "author": "davidism",
+        "date": "2026-07-30T17:05:04Z",
+        "first_line": "Replace the use of private `monkeypatch` fixture API (#6095)",
+        "msg_len": 60,
+        "merge_pr": false
+      },
+      {
+        "sha": "5ce121dd841e2dc2594d0ed3954278f4101d3521",
+        "author": "mgorny",
+        "date": "2026-07-14T10:07:37Z",
+        "first_line": "Replace the use of private `monkeypatch` fixture API",
+        "msg_len": 52,
+        "merge_pr": false
+      },
+      {
+        "sha": "8285adf5a4f572dbf7a0a3b8f3a96ca0b19c50a4",
+        "author": "davidism",
+        "date": "2026-06-10T18:03:21Z",
+        "first_line": "update dev dependencies",
+        "msg_len": 23,
+        "merge_pr": false
+      },
+      {
+        "sha": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81",
+        "author": "davidism",
+        "date": "2026-05-31T14:42:46Z",
+        "first_line": "Any for  CertParamType type",
+        "msg_len": 27,
+        "merge_pr": false
+      },
+      {
+        "sha": "954f5684e4841aad84a8eec7ace7b81a0d3f6831",
+        "author": "davidism",
+        "date": "2026-05-18T23:35:44Z",
+        "first_line": "update dev dependencies",
+        "msg_len": 23,
+        "merge_pr": false
+      },
+      {
+        "sha": "9fcd34c9f3065640bd1cd86234216ca068633fb9",
+        "author": "davidism",
+        "date": "2026-05-13T14:37:53Z",
+        "first_line": "Merge branch 'stable'",
+        "msg_len": 21,
+        "merge_pr": false
+      }
+    ],
+    "commit_sample": 30,
+    "commit_stats": {
+      "avg_msg_len": 26.1,
+      "min_msg_len": 7,
+      "max_msg_len": 63,
+      "distinct_authors": 3,
+      "merge_pr_ratio": 0.0,
+      "oldest_in_sample": "2026-05-13T14:37:53Z",
+      "newest_in_sample": "2026-10-30T15:05:20Z"
+    },
+    "branch_count_sampled": 4,
+    "tag_count_sampled": 69,
+    "releases_sampled": [
+      {
+        "tag": "3.1.3",
+        "published_at": "2026-02-19T05:01:30Z"
+      },
+      {
+        "tag": "3.1.2",
+        "published_at": "2025-08-19T21:03:31Z"
+      },
+      {
+        "tag": "3.1.1",
+        "published_at": "2025-05-13T15:01:32Z"
+      },
+      {
+        "tag": "3.1.0",
+        "published_at": "2024-11-13T18:29:05Z"
+      },
+      {
+        "tag": "3.0.3",
+        "published_at": "2024-04-07T19:27:16Z"
+      }
+    ],
+    "prs_open": 3,
+    "prs_merged": 1624,
+    "prs_closed_unmerged": 1248,
+    "issues_open": 1,
+    "issues_closed": 2779,
+    "languages": [
+      {
+        "lang": "Python",
+        "pct": 99.9
+      },
+      {
+        "lang": "HTML",
+        "pct": 0.1
+      },
+      {
+        "lang": "Shell",
+        "pct": 0.0
+      },
+      {
+        "lang": "CSS",
+        "pct": 0.0
+      }
+    ]
+  },
+  {
+    "repo": "sindresorhus/awesome",
+    "fetched_at": "2026-11-17T04:26:05Z",
+    "meta": {
+      "full_name": "sindresorhus/awesome",
+      "description": "😎 Awesome lists about all kinds of interesting topics [NOTE: Pull requests are temporarily disabled until I have a chance to catch up with the existing ones]",
+      "html_url": "https://github.com/sindresorhus/awesome",
+      "default_branch": "main",
+      "size_kb": 1566,
+      "stars": 538078,
+      "forks": 38474,
+      "watchers": 8484,
+      "open_issues": 104,
+      "language": null,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "lists",
+        "resources",
+        "unicorns"
+      ],
+      "license": "CC0-1.0",
+      "created_at": "2014-07-11T13:42:37Z",
+      "pushed_at": "2026-09-02T02:10:47Z",
+      "archived": false,
+      "has_issues": true,
+      "has_wiki": false,
+      "has_projects": false,
+      "allow_squash_merge": null,
+      "allow_merge_commit": null,
+      "allow_rebase_merge": null,
+      "delete_branch_on_merge": null
+    },
+    "root_entries": [
+      {
+        "name": ".editorconfig",
+        "type": "file",
+        "size": 129
+      },
+      {
+        "name": ".gitattributes",
+        "type": "file",
+        "size": 107
+      },
+      {
+        "name": ".github",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "awesome.md",
+        "type": "file",
+        "size": 4298
+      },
+      {
+        "name": "code-of-conduct.md",
+        "type": "file",
+        "size": 3230
+      },
+      {
+        "name": "contributing.md",
+        "type": "file",
+        "size": 2190
+      },
+      {
+        "name": "create-list.md",
+        "type": "file",
+        "size": 573
+      },
+      {
+        "name": "license",
+        "type": "file",
+        "size": 6478
+      },
+      {
+        "name": "media",
+        "type": "dir",
+        "size": 0
+      },
+      {
+        "name": "pull_request_template.md",
+        "type": "file",
+        "size": 9040
+      },
+      {
+        "name": "readme.md",
+        "type": "file",
+        "size": 78330
+      }
+    ],
+    "markers": {
+      "README.md": false,
+      "LICENSE": false,
+      "LICENSE.txt": false,
+      "CONTRIBUTING.md": false,
+      "CODE_OF_CONDUCT.md": false,
+      ".github": true,
+      ".gitignore": false,
+      ".editorconfig": true,
+      "pyproject.toml": false,
+      "setup.py": false,
+      "setup.cfg": false,
+      "requirements.txt": false,
+      "tox.ini": false,
+      "Makefile": false,
+      "CHANGELOG.md": false,
+      "docs": false,
+      "tests": false,
+      "test": false,
+      "src": false,
+      "AUTHORS.md": false,
+      "MANIFEST.in": false
+    },
+    "tree_truncated": false,
+    "blob_count": 23,
+    "dir_count": 3,
+    "top_extensions": [
+      [
+        ".md",
+        7
+      ],
+      [
+        ".svg",
+        6
+      ],
+      [
+        ".ai",
+        2
+      ],
+      [
+        ".png",
+        2
+      ],
+      [
+        ".editorconfig",
+        1
+      ],
+      [
+        ".gitattributes",
+        1
+      ],
+      [
+        ".yml",
+        1
+      ],
+      [
+        ".sh",
+        1
+      ]
+    ],
+    "files_per_toplevel": [
+      [
+        "media",
+        12
+      ],
+      [
+        "(root files)",
+        9
+      ],
+      [
+        ".github",
+        2
+      ]
+    ],
+    "deepest_path_depth": 3,
+    "workflow_files": [
+      ".github/workflows/main.yml",
+      ".github/workflows/repo_linter.sh"
+    ],
+    "recent_commits": [
+      {
+        "sha": "bc98e517ddca672f55f9857d714fc3ea3c3540b2",
+        "author": "sindresorhus",
+        "date": "2026-09-02T02:10:42Z",
+        "first_line": "Meta tweaks",
+        "msg_len": 11,
+        "merge_pr": false
+      },
+      {
+        "sha": "d35bcd9c5c83f2652b0d2b5f91a320009c8f29a3",
+        "author": "AkashGowdaNC",
+        "date": "2026-08-21T12:39:13Z",
+        "first_line": "Fix invalid space character (#4393)",
+        "msg_len": 35,
+        "merge_pr": false
+      },
+      {
+        "sha": "d2c9dbbbf85207cdf629a6e66a4f2186a7b4fbd3",
+        "author": "morning-verlu",
+        "date": "2026-08-18T13:28:49Z",
+        "first_line": "Remove 8 archived awesome lists (#4390)",
+        "msg_len": 39,
+        "merge_pr": false
+      },
+      {
+        "sha": "7cb5c8371c0fe73e5444a42d5542f6280c38b1a6",
+        "author": "dar5hak",
+        "date": "2026-06-30T18:21:16Z",
+        "first_line": "Remove Yeoman generator suggestion (#4299)",
+        "msg_len": 42,
+        "merge_pr": false
+      },
+      {
+        "sha": "375060916969103e8e4889fbfbf6088929d0dffd",
+        "author": "subbareddypalagiri",
+        "date": "2026-06-25T12:00:39Z",
+        "first_line": "Remove 17 archived awesome lists (#4278)",
+        "msg_len": 40,
+        "merge_pr": false
+      },
+      {
+        "sha": "e8a4efeb130ccfe1db8bff91d042dc13f09497b9",
+        "author": "subbareddypalagiri",
+        "date": "2026-06-24T10:58:27Z",
+        "first_line": "Fix: Prevent repo linter from crashing on deletion-only PRs (#4283)",
+        "msg_len": 67,
+        "merge_pr": false
+      },
+      {
+        "sha": "ad02f86dc41610f707d75c94800c1cc1073b2c7f",
+        "author": "sindresorhus",
+        "date": "2026-06-23T21:15:39Z",
+        "first_line": "Add RSS link",
+        "msg_len": 25,
+        "merge_pr": false
+      },
+      {
+        "sha": "24da1c60ba400087006af9ff02accdb4a53472b6",
+        "author": "lonelyhty",
+        "date": "2026-06-02T12:50:12Z",
+        "first_line": "Update link (#4229)",
+        "msg_len": 19,
+        "merge_pr": false
+      },
+      {
+        "sha": "eafdbf2323f44c0b934c3d74b8bac0db624a3b41",
+        "author": "Bortlesboat",
+        "date": "2026-05-05T14:47:44Z",
+        "first_line": "Update GitHub topics docs link (#4146)",
+        "msg_len": 38,
+        "merge_pr": false
+      },
+      {
+        "sha": "f5d5b00480ce3201bef6248f673d2ec734d73732",
+        "author": "sindresorhus",
+        "date": "2026-05-03T08:18:28Z",
+        "first_line": "Meta tweaks",
+        "msg_len": 11,
+        "merge_pr": false
+      },
+      {
+        "sha": "4059268a1080c929ae858d530f4d2caeefcefa0a",
+        "author": "JiayangLai",
+        "date": "2026-04-19T17:04:38Z",
+        "first_line": "Fix error handling in repo linter (#4104)",
+        "msg_len": 41,
+        "merge_pr": false
+      },
+      {
+        "sha": "893fc57bdc6c37b0ff6f90c7aa3cdb4eca348543",
+        "author": "sindresorhus",
+        "date": "2026-04-02T16:29:56Z",
+        "first_line": "Meta tweaks",
+        "msg_len": 11,
+        "merge_pr": false
+      },
+      {
+        "sha": "2f3c2725bff8bfa53e2d00fe55dd3d9564e13aef",
+        "author": "derhuerst",
+        "date": "2026-04-01T08:25:16Z",
+        "first_line": "Update link for `Transit` (#3818)",
+        "msg_len": 33,
+        "merge_pr": false
+      },
+      {
+        "sha": "3ac17312f3c2d68c211b5c9d1e1f92efebc5e3c3",
+        "author": "sindresorhus",
+        "date": "2026-03-09T07:59:53Z",
+        "first_line": "Update guidelines",
+        "msg_len": 17,
+        "merge_pr": false
+      },
+      {
+        "sha": "c86551ff54e5e432ceec9212b5b97bbe93f72998",
+        "author": "sindresorhus",
+        "date": "2026-02-03T15:55:03Z",
+        "first_line": "Improve some descriptions",
+        "msg_len": 25,
+        "merge_pr": false
+      },
+      {
+        "sha": "3ae7bc143825b4e4fc96bf74f4468817462d0b29",
+        "author": "sindresorhus",
+        "date": "2026-03-04T16:56:28Z",
+        "first_line": "Update pull_request_template.md",
+        "msg_len": 31,
+        "merge_pr": false
+      },
+      {
+        "sha": "91a632998739c7d62fe3bf37840e80f73edf6fae",
+        "author": "putku45",
+        "date": "2026-02-28T18:39:08Z",
+        "first_line": "Fix typo (#3975)",
+        "msg_len": 16,
+        "merge_pr": false
+      },
+      {
+        "sha": "da0892f292cc83968630ff81ea573c0d28358b87",
+        "author": "JeevanYewale",
+        "date": "2026-01-28T14:08:49Z",
+        "first_line": "Fix: Remove duplicate paragraph tag in readme (#3897)",
+        "msg_len": 53,
+        "merge_pr": false
+      },
+      {
+        "sha": "51e985fca12098f1120100b4fa5687819e3d8927",
+        "author": "pgoslatara",
+        "date": "2026-01-15T13:32:01Z",
+        "first_line": "Update outdated GitHub Actions version (#3875)",
+        "msg_len": 46,
+        "merge_pr": false
+      },
+      {
+        "sha": "c4919d35092f004c3db26ce70560e867cc71b2b8",
+        "author": "ahmasmibhanu",
+        "date": "2026-01-06T15:01:31Z",
+        "first_line": "Improve contribution instructions for beginners (#3856)",
+        "msg_len": 111,
+        "merge_pr": false
+      },
+      {
+        "sha": "1345b0a348d0abb20189b5154159a7cc08bbd35f",
+        "author": "sindresorhus",
+        "date": "2025-11-22T10:35:25Z",
+        "first_line": "Meta tweaks",
+        "msg_len": 11,
+        "merge_pr": false
+      },
+      {
+        "sha": "fa5128c43064b68e968d5484751a22cc4222725f",
+        "author": "sindresorhus",
+        "date": "2025-11-18T11:44:09Z",
+        "first_line": "Remove Zig",
+        "msg_len": 23,
+        "merge_pr": false
+      },
+      {
+        "sha": "ff697278bf754916358ab4de84af99518a2e96f2",
+        "author": "colbytimm",
+        "date": "2025-11-12T08:51:33Z",
+        "first_line": "Add Copilot Agents (#3554)",
+        "msg_len": 26,
+        "merge_pr": false
+      },
+      {
+        "sha": "a52fe1ca90889ca67fe78a5366b41afe6ed2d079",
+        "author": "emmanuelgautier",
+        "date": "2025-11-09T09:55:31Z",
+        "first_line": "Add OpenID Connect (#2607)",
+        "msg_len": 82,
+        "merge_pr": false
+      },
+      {
+        "sha": "6095f216732cc477d8b5c5f5057a77de4bc60cd6",
+        "author": "aorumbayev",
+        "date": "2025-10-28T17:49:43Z",
+        "first_line": "Add Omarchy (#3658)",
+        "msg_len": 19,
+        "merge_pr": false
+      },
+      {
+        "sha": "6dc057680e37322bc5c4f570d1626c1e4002890c",
+        "author": "Mo-way",
+        "date": "2025-10-28T17:47:10Z",
+        "first_line": "Add Audio Over IP (#3535)",
+        "msg_len": 25,
+        "merge_pr": false
+      },
+      {
+        "sha": "75f98d45c7294a31a6eef88bc31fb4d5ccb2642c",
+        "author": "bl-ue",
+        "date": "2025-10-28T15:32:56Z",
+        "first_line": "Add Gemini CLI (#3621)",
+        "msg_len": 22,
+        "merge_pr": false
+      },
+      {
+        "sha": "64fefe7e2a2e73c64daba282f8d52adae4bcb558",
+        "author": "sampart",
+        "date": "2025-10-28T15:08:26Z",
+        "first_line": "Add Tech Ethics (#3560)",
+        "msg_len": 23,
+        "merge_pr": false
+      },
+      {
+        "sha": "777c2159bbb3e1fa6656b48b105f6be1122b5e1c",
+        "author": "rellaner",
+        "date": "2025-10-28T13:47:54Z",
+        "first_line": "Add Position-Based Quantum Cryptography (#3390)",
+        "msg_len": 47,
+        "merge_pr": false
+      },
+      {
+        "sha": "f9610363595b9095f004e3be220c5c0d750a8009",
+        "author": "sindresorhus",
+        "date": "2025-10-28T13:27:08Z",
+        "first_line": "Remove broken link",
+        "msg_len": 18,
+        "merge_pr": false
+      }
+    ],
+    "commit_sample": 30,
+    "commit_stats": {
+      "avg_msg_len": 33.6,
+      "min_msg_len": 11,
+      "max_msg_len": 111,
+      "distinct_authors": 20,
+      "merge_pr_ratio": 0.0,
+      "oldest_in_sample": "2025-10-28T13:27:08Z",
+      "newest_in_sample": "2026-09-02T02:10:42Z"
+    },
+    "branch_count_sampled": 2,
+    "tag_count_sampled": 0,
+    "releases_sampled": [],
+    "prs_open": 88,
+    "prs_merged": 697,
+    "prs_closed_unmerged": 1702,
+    "issues_open": 16,
+    "issues_closed": 352,
+    "languages": []
+  },
+  {
+    "repo": "octocat/Hello-World",
+    "fetched_at": "2026-11-17T04:26:17Z",
+    "meta": {
+      "full_name": "octocat/Hello-World",
+      "description": "My first repository on GitHub!",
+      "html_url": "https://github.com/octocat/Hello-World",
+      "default_branch": "master",
+      "size_kb": 1,
+      "stars": 3938,
+      "forks": 7580,
+      "watchers": 1740,
+      "open_issues": 7555,
+      "language": null,
+      "topics": [],
+      "license": null,
+      "created_at": "2011-01-26T19:01:12Z",
+      "pushed_at": "2024-08-20T23:54:42Z",
+      "archived": false,
+      "has_issues": true,
+      "has_wiki": true,
+      "has_projects": true,
+      "allow_squash_merge": null,
+      "allow_merge_commit": null,
+      "allow_rebase_merge": null,
+      "delete_branch_on_merge": null
+    },
+    "root_entries": [
+      {
+        "name": "README",
+        "type": "file",
+        "size": 13
+      }
+    ],
+    "markers": {
+      "README.md": false,
+      "LICENSE": false,
+      "LICENSE.txt": false,
+      "CONTRIBUTING.md": false,
+      "CODE_OF_CONDUCT.md": false,
+      ".github": false,
+      ".gitignore": false,
+      ".editorconfig": false,
+      "pyproject.toml": false,
+      "setup.py": false,
+      "setup.cfg": false,
+      "requirements.txt": false,
+      "tox.ini": false,
+      "Makefile": false,
+      "CHANGELOG.md": false,
+      "docs": false,
+      "tests": false,
+      "test": false,
+      "src": false,
+      "AUTHORS.md": false,
+      "MANIFEST.in": false
+    },
+    "tree_truncated": false,
+    "blob_count": 1,
+    "dir_count": 0,
+    "top_extensions": [
+      [
+        "(no-ext)",
+        1
+      ]
+    ],
+    "files_per_toplevel": [
+      [
+        "(root files)",
+        1
+      ]
+    ],
+    "deepest_path_depth": 1,
+    "workflow_files": [],
+    "recent_commits": [
+      {
+        "sha": "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
+        "author": "octocat",
+        "date": "2012-03-06T23:06:50Z",
+        "first_line": "Merge pull request #6 from Spaceghost/patch-1",
+        "msg_len": 71,
+        "merge_pr": true
+      },
+      {
+        "sha": "762941318ee16e59dabbacb1b4049eec22f0d303",
+        "author": "Spaceghost",
+        "date": "2011-09-14T04:42:41Z",
+        "first_line": "New line at end of file. --Signed off by Spaceghost",
+        "msg_len": 51,
+        "merge_pr": false
+      },
+      {
+        "sha": "553c2077f0edc3d5dc5d17262f6aa498e69d6f8e",
+        "author": "Cameron423698",
+        "date": "2011-01-26T19:06:08Z",
+        "first_line": "first commit",
+        "msg_len": 12,
+        "merge_pr": false
+      }
+    ],
+    "commit_sample": 3,
+    "commit_stats": {
+      "avg_msg_len": 44.7,
+      "min_msg_len": 12,
+      "max_msg_len": 71,
+      "distinct_authors": 3,
+      "merge_pr_ratio": 0.333,
+      "oldest_in_sample": "2011-01-26T19:06:08Z",
+      "newest_in_sample": "2012-03-06T23:06:50Z"
+    },
+    "branch_count_sampled": 3,
+    "tag_count_sampled": 0,
+    "releases_sampled": [],
+    "prs_open": 1377,
+    "prs_merged": 1,
+    "prs_closed_unmerged": 703,
+    "issues_open": 6167,
+    "issues_closed": 2592,
+    "languages": []
+  }
+]

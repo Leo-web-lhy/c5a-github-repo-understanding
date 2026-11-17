@@ -1,0 +1,441 @@
+# C5A Git 排错实验原始日志
+# 生成时间: 2026-11-17 12:54:41
+# 说明: 每条 $ 开头为真实执行命令，其后为真实 stdout/stderr 与 exit code。
+
+$ git --version
+git version 2.55.0.windows.3
+[exit=0]
+
+git_version=git version 2.55.0.windows.3
+
+
+========================================================================
+## E1 Git 对象模型：commit / tree / blob 到底是什么
+疑问: commit 里存的不是一个目录快照，而是一串哈希引用；改一个字节会怎样？
+========================================================================
+
+$ git init -q -b main
+[exit=3221225477]
+
+$ git add a.txt
+[exit=3221225477]
+
+$ git commit -q -m add a.txt
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git rev-parse HEAD
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> HEAD 指向 commit 对象
+
+$ git cat-file -t 
+[exit=3221225477]
+
+$ git cat-file -p 
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> commit 对象只含 tree/parent/author/message
+
+$ git rev-parse HEAD^{tree}
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git cat-file -p 
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> tree 对象是 模式+类型+哈希+文件名 的列表
+
+$ git rev-parse HEAD:a.txt
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git cat-file -p 
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> blob 对象只存文件内容，不含文件名
+
+$ git hash-object a.txt
+ce013625030ba8dba906f756967f9e9ca394464a
+[exit=0]
+>> 内容不变 -> 哈希不变（内容寻址）
+
+$ git hash-object a.txt
+4effa19f4f75f846c3229b9dbdbad14eff362f32
+[exit=0]
+>> 改一个字符 -> blob 哈希彻底不同
+
+$ git count-objects -v
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> Git 靠这套对象+引用成立，而不是靠'文件夹'
+
+
+========================================================================
+## E2 detached HEAD：为什么提交会'丢'
+疑问: checkout 到某个 commit 后做的提交，为什么第二天不见了？
+========================================================================
+
+$ git init -q -b main
+[exit=0]
+
+$ git add .
+[stderr] warning: in the working copy of 'f.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m c1
+[exit=0]
+
+$ git commit -qam c2
+[stderr] warning: in the working copy of 'f.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git rev-parse HEAD~1
+64da8b5d0860e7c466c61a712df66e47026b2ce9
+[exit=0]
+
+$ git switch --detach 64da8b5d0860e7c466c61a712df66e47026b2ce9
+[stderr] HEAD is now at 64da8b5 c1
+[exit=0]
+>> 进入 detached HEAD
+
+$ git status -sb
+## HEAD (no branch)
+[exit=0]
+>> 注意 HEAD detached 提示
+
+$ git add .
+[stderr] warning: in the working copy of 'g.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m detached-work
+[exit=0]
+>> 这个 commit 只被 HEAD 直接引用
+
+$ git rev-parse HEAD
+5bbcea6b2cbf2e9c316dc63958cdab5c4bb30f3b
+[exit=0]
+
+$ git switch main
+[stderr] Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  5bbcea6 detached-work
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> 5bbcea6
+
+Switched to branch 'main'
+[exit=0]
+>> 切回 main：没有分支引用那个提交
+
+$ git log --oneline --all
+12255e9 c2
+64da8b5 c1
+[exit=0]
+>> 分支上看不到 detached-work
+
+$ git cat-file -t 5bbcea6b2cbf2e9c316dc63958cdab5c4bb30f3b
+commit
+[exit=0]
+>> 对象仍在（还没被 gc），但已无可达引用
+
+$ git branch rescue 5bbcea6b2cbf2e9c316dc63958cdab5c4bb30f3b
+[exit=3221225477]
+>> 救援：给它一个分支或标签引用
+
+$ git log --oneline rescue
+[stderr] fatal: ambiguous argument 'rescue': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+[exit=128]
+>> 现在它可达了
+
+$ git reflog -n 5
+12255e9 HEAD@{0}: checkout: moving from 5bbcea6b2cbf2e9c316dc63958cdab5c4bb30f3b to main
+5bbcea6 HEAD@{1}: commit: detached-work
+64da8b5 HEAD@{2}: checkout: moving from main to 64da8b5d0860e7c466c61a712df66e47026b2ce9
+12255e9 HEAD@{3}: commit: c2
+64da8b5 HEAD@{4}: commit (initial): c1
+[exit=0]
+>> reflog 是本地'后悔药'（默认 90 天）
+
+
+========================================================================
+## E3 分支 + 合并冲突：冲突标记长什么样、怎么收尾
+疑问: 两个人改同一行必然冲突，冲突文件到底该怎么读？
+========================================================================
+
+$ git init -q -b main
+[exit=3221225477]
+
+$ git add .
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git commit -q -m base config
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git switch -c feature-a
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git commit -qam feature-a: timeout 60
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git switch main
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git commit -qam main: retry 5
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git merge feature-a --no-edit
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> 冲突返回非 0，这不是 bug
+
+$ git status -sb
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+--- 冲突后的 config.ini 真实内容 ---
+timeout=30
+retry=5
+
+--- end ---
+
+$ git add config.ini
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> 手工合并两边的意图后再 add
+
+$ git commit -q --no-edit -m merge feature-a
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+
+$ git log --graph --oneline --decorate
+[stderr] fatal: not a git repository (or any of the parent directories): .git
+[exit=128]
+>> 三方合并产生两个 parent
+
+
+========================================================================
+## E4 merge 与 rebase 的区别（同一组提交的两种历史）
+疑问: 同样的改动，为什么一条历史是分叉的、一条是直线的？
+========================================================================
+
+$ git init -q -b main
+[exit=0]
+
+$ git add .
+[stderr] warning: in the working copy of 'a.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m c1
+[exit=3221225477]
+
+$ git switch -c feat
+[stderr] Switched to a new branch 'feat'
+[exit=0]
+
+$ git add .
+[stderr] warning: in the working copy of 'a.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m feat work
+[exit=0]
+
+$ git switch main
+[stderr] fatal: invalid reference: main
+[exit=128]
+
+$ git add .
+[stderr] warning: in the working copy of 'b.txt', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'c.txt', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m main work
+[exit=0]
+
+$ git rev-parse feat
+eed12924c0a16fd4e2642ed08a852557bd3cf617
+[exit=0]
+
+$ git merge feat --no-ff --no-edit
+Already up to date.
+[exit=0]
+>> 方式一: merge 保留分叉
+
+$ git log --graph --oneline --decorate -5
+EXCEPTION in E4: TimeoutExpired(['git', 'log', '--graph', '--oneline', '--decorate', '-5'], 120)
+
+========================================================================
+## E5 reset 与 revert：为什么共享分支只能用 revert
+疑问: 误提交一行密码到 main，删掉那行有几种做法，哪种不会伤到别人？
+========================================================================
+
+$ git init -q -b main
+[exit=0]
+
+$ git add .
+[stderr] warning: in the working copy of 'conf.py', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m add config (with secret)
+[exit=0]
+
+$ git commit -qam remove secret
+[stderr] warning: in the working copy of 'conf.py', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git rev-parse HEAD~1
+0860e999ba6cca16271860983c4d9427ac17798d
+[exit=0]
+
+$ git reset --soft HEAD~1
+[exit=0]
+>> soft: 只动 HEAD，改动留在暂存区
+
+$ git status -sb
+## main
+M  conf.py
+[exit=0]
+
+$ git reset --hard 0860e999ba6cca16271860983c4d9427ac17798d
+HEAD is now at 0860e99 add config (with secret)
+[exit=0]
+>> 回到含密码的那个提交（模拟历史里已经有它）
+
+$ git reset --mixed HEAD
+[exit=0]
+>> mixed: 动 HEAD+暂存区，工作区不变
+
+$ git status -sb
+## main
+[exit=0]
+
+$ git reset --hard 0860e999ba6cca16271860983c4d9427ac17798d
+HEAD is now at 0860e99 add config (with secret)
+[exit=0]
+
+$ git revert --no-edit HEAD
+[main 355b0f3] Revert "add config (with secret)"
+ Date: Tue Nov 17 12:59:29 2026 +0800
+ 1 file changed, 2 deletions(-)
+ delete mode 100644 conf.py
+[exit=0]
+>> 共享分支正确做法：revert 生成反向提交
+
+$ git log --oneline -3
+355b0f3 Revert "add config (with secret)"
+0860e99 add config (with secret)
+[exit=0]
+>> 历史保留，两条记录都在（明文仍在历史里！）
+
+$ git log -p -1
+commit 355b0f3d67ae7a9e83181d04d0309837c3c2622d
+Author: C5A Lab <lab@example.com>
+Date:   Tue Nov 17 12:59:29 2026 +0800
+
+    Revert "add config (with secret)"
+    
+    This reverts commit 0860e999ba6cca16271860983c4d9427ac17798d.
+
+diff --git a/conf.py b/conf.py
+deleted file mode 100644
+index fd6510e..0000000
+--- a/conf.py
++++ /dev/null
+@@ -1,2 +0,0 @@
+-user='app'
+-password='s3cr3t'
+[exit=0]
+>> revert 只是抵消，不是抹除
+
+>> 关键结论: reset 改写历史（只能用于未共享的本地分支）；
+>> revert 追加历史（可用于已推送/被他人拉取的分支）。
+>> 真正的密钥泄露要靠吊销凭据 + 历史重写（filter-repo/BFG），revert 不够。
+
+
+========================================================================
+## E6 .gitignore 为什么不生效
+疑问: 明明写进 .gitignore 了，git status 还显示 .env，为什么？
+========================================================================
+
+$ git init -q -b main
+[exit=0]
+
+$ git add .
+[exit=3221225477]
+
+$ git commit -q -m oops: committed .env
+On branch main
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.env
+	app.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+[exit=1]
+
+$ git add .gitignore
+[stderr] warning: in the working copy of '.gitignore', LF will be replaced by CRLF the next time Git touches it
+[exit=0]
+
+$ git commit -q -m add gitignore
+[exit=0]
+
+$ git status -sb --ignored
+## main
+?? app.py
+!! .env
+[exit=0]
+>> 已跟踪的文件不受 .gitignore 影响
+
+$ git check-ignore -v .env
+.gitignore:1:.env	.env
+[exit=0]
+>> check-ignore 说它被规则命中
+
+$ git ls-files .env
+[exit=0]
+>> 但它依然在索引里 -> 这就是原因
+
+$ git rm --cached .env
+[stderr] fatal: pathspec '.env' did not match any files
+[exit=128]
+>> 从索引移除，保留本地文件
+
+$ git commit -q -m untrack .env
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	app.py
+
+nothing added to commit but untracked files present (use "git add" to track)
+[exit=1]
+
+$ git status -sb --ignored
+[exit=3221225477]
+>> 现在才真的被忽略
+
+
+========================================================================
+## E7 Windows 上'改了 5 个文件其实没改'（CRLF/LF 假象）
+疑问: git status 说 5 个文件 M，git diff 却看不到差异，是怎么回事？
+========================================================================
+
+$ git init -q -b main
+[exit=0]
+
+$ git -c core.autocrlf=false add x.txt

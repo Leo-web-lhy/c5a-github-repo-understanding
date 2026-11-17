@@ -1,0 +1,14 @@
+token_present=True token_len=40
+GET /repos/psf/requests -> 200
+tree ok blobs=130 trees=23 truncated=False
+GET /repos/pallets/flask -> 200
+tree ok blobs=236 trees=51 truncated=False
+GET /repos/sindresorhus/awesome -> 200
+tree ok blobs=23 trees=3 truncated=False
+GET /repos/octocat/Hello-World -> 200
+tree ok blobs=1 trees=0 truncated=False
+SUMMARY ok=4 total=4 rate_remaining=4964
+  psf/requests             blobs=130   depth=5  commits_sampled=30  stars=54715
+  pallets/flask            blobs=236   depth=8  commits_sampled=30  stars=75184
+  sindresorhus/awesome     blobs=23    depth=3  commits_sampled=30  stars=538078
+  octocat/Hello-World      blobs=1     depth=1  commits_sampled=3   stars=3938
